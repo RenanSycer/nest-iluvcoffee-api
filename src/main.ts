@@ -8,6 +8,9 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true, //only allows data ensured on dtos on POST request,
       forbidNonWhitelisted: true, //stop a request when the data wasnt allowed on whitelist(dto)
+      transformOptions: {
+        enableImplicitConversion: true, //enable the implic conversion of validations pipe, see pagniation dto
+      },
     }),
   ); //instaled 2 pkg  yarn add class-validot class-transformer
   await app.listen(3000);
