@@ -87,7 +87,6 @@ export class CoffeesService {
       recommendEvent.type = 'coffee';
       recommendEvent.payload = { coffeeId: coffee.id };
 
-      console.log(coffee);
       await queryRunner.manager.save(coffee);
       await queryRunner.manager.save(recommendEvent);
 
